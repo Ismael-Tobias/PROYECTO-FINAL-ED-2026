@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Página web AlexCG</title>
+    <link rel="shortcut icon" href="P2/img/alexcgdesign.png" type="image/x-icon">
+    <link rel="stylesheet" href="P2/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index1.html">ESTRUCTURA DE DATOS</a>
+            <a href="index2.html">MODULARIDAD</a>
+            <a href="index3.html">ENCAPSULACIÓN</a>
+            <a href="index4.html">ARREGLO ORDENADO</a>
+            <a href="index5.html">PILAS</a>
+            <a href="index6.html">COLAS</a>
+            <a href="index7.html">POO</a>
+            <a href="/logout" class="logout">Cerrar Sesion</a>
+        </nav>
+        <section class="textos-header">
+            <h1>MODULARIDAD</h1>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+    </header>
+    <main>
+        <section class="concepto">
+            <div class = "titulo-concepto">
+                <span class="numero">1</span>
+                <h2>MODULO</h2>
+            </div>
+            <p class="descripcion">
+                Los modelos de programación son abstracciones que definen la manera en que se estructuran, organizan y ejecutan las instrucciones dentro de una computadora. Estos modelos establecen las bases para el diseño y desarrollo de software, facilitando la comprensión y el control del flujo de ejecución de los programas.
+                Los enfoques de programación varían desde la programación secuencial, paralela y modular, hasta la programación orientada a objetos (POO). Cada uno de estos enfoques permite a los desarrolladores seleccionar el modelo técnico que mejor se adapte a los requerimientos del sistema, considerando factores como la eficiencia, la escalabilidad y el nivel de complejidad del software a desarrollar.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                        <img src="P2/img/Modulo.png" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+>public class ModuloEjemplo {
+    public static void mostrarMensaje()
+    {
+        System.out.println("Bienvenido al sistema");
+    }
+    public static int sumar(int a, int b) 
+    {
+        return a + b;
+    }
+    public static boolean esPar(int numero)
+    {
+        return numero % 2 == 0;
+    }
+    public static void main(String[] args)
+    {
+        mostrarMensaje();
+        int resultado = sumar(8, 4);
+        System.out.println("Resultado de la suma: " + resultado);
+        boolean par = esPar(resultado);
+        System.out.println("¿El resultado es par? " + par);
+    }
+}                              
+                    </pre>
+                </div>
+            </div>
+            <div class="contenedor-boton">
+                <button class="boton" data-resultado="Bienvenido al sistema
+Resultado de la suma: 12
+¿El resultado es par? true">Probar Ejemplo</button>
+            </div>
+        </section>
+        <section class="concepto">
+                <div class="titulo-concepto">
+                <span class="numero">2</span>
+                <h2>ABSTRACCION DE DATOS</h2>
+            </div>
+            <p class="descripcion">
+                La abstracción de datos es un principio fundamental en la programación que consiste en separar la definición lógica de un conjunto de datos de su implementación concreta. Un tipo abstracto de datos (TAD) es aquel cuya representación interna ha sido ocultada, permitiendo que los datos solo puedan ser manipulados mediante un conjunto específico de operaciones previamente definidas.
+               Este enfoque facilita el desarrollo de programas más claros y seguros, ya que el usuario del tipo abstracto de datos no necesita conocer los detalles de su implementación interna. Además, la abstracción de datos favorece la reutilización del código, el mantenimiento del software y la reducción de errores, al limitar el acceso directo a los datos y promover el uso de interfaces bien definidas.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                        <img src="P2/img/Abstraccion.png" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+> public class CuentaBancaria {
+    private double saldo;
+    public CuentaBancaria(double saldoInicial) 
+        {
+            saldo = saldoInicial;
+        }
+    public double obtenerSaldo() 
+        {
+            return saldo;
+        }
+    public void depositar(double cantidad) 
+    {
+        if (cantidad > 0) 
+        {
+            saldo += cantidad;
+        }
+    }
+    public void retirar(double cantidad)
+    {
+        if (cantidad > 0 && cantidad = saldo) 
+        {
+            saldo -= cantidad;
+        }
+    }
+    public static void main(String[] args)
+    {
+        CuentaBancaria cuenta = new CuentaBancaria(1000);
+        cuenta.depositar(500);
+        cuenta.retirar(300);
+        System.out.println("Saldo actual: $" + cuenta.obtenerSaldo());
+    }
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="contenedor-boton">
+                <button class="boton" data-resultado="Saldo actual: $1200.0">Probar Ejemplo</button>
+            </div>
+        </section>
+         <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">3</span>
+                <h2>CLASE</h2>
+            </div>
+            <p class="descripcion">
+                 Una clase es un modelo o plano que define los datos y comportamientos que tendrán los objetos que se crean a partir de ella. En una clase se agrupan los campos (atributos) y los métodos (funciones) relacionados, formando una sola unidad que facilita la organización y estructura del código.
+                La memoria para los miembros de una clase se asigna únicamente cuando se crea un objeto a partir de dicha clase. Esto permite un uso eficiente de los recursos del sistema y posibilita la creación de múltiples objetos independientes que comparten la misma definición, pero mantienen su propio estado en memoria.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P2/img/Clase.jpeg" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+>public class Persona {
+    String nombre;
+    int edad;
+
+    // Método 
+    void saludar() {
+    System.out.println("Hola, mi nombre es " + nombre + " y tengo " + edad + " años.");
+    }
+    public static void main(String[] args) {
+        Persona persona1 = new Persona();
+        persona1.nombre = "Ana";
+        persona1.edad = 20;
+        persona1.saludar();
+    }
+    }
+                    </pre>
+                </div>
+            </div>
+            <div class="contenedor-boton">
+                <button class="boton" data-resultado="Hola, mi nombre es Ana y tengo 20 años.">Probar Ejemplo</button>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">4</span>
+                <h2>OBJETO</h2>
+            </div>
+            <p class="descripcion">
+                 Un objeto es una entidad que representa una encapsulación de un estado y un comportamiento. El estado de un objeto está definido por los valores que toman sus datos o atributos, mientras que el comportamiento se expresa a través de las operaciones o métodos que puede realizar.
+                Los objetos se crean a partir de una clase y permiten modelar elementos del mundo real dentro de un programa. Cada objeto posee su propio estado en memoria y puede interactuar con otros objetos mediante la ejecución de sus métodos, lo que facilita la construcción de sistemas estructurados, reutilizables y fáciles de mantener.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P2/img/Objeto.jpeg" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+> Persona persona1 = new Persona();
+                    </pre>
+                </div>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">5</span>
+                <h2>LEGUAJES DE PROGRAMACION</h2>
+            </div>
+            <p class="descripcion">
+               Los lenguajes de programación ofrecen distintos niveles de abstracción, los cuales dependen de los mecanismos y herramientas que proporciona cada lenguaje. Estos niveles permiten al desarrollador elegir la forma más adecuada de organizar y estructurar un programa, de acuerdo con la complejidad del sistema y los servicios que se desean implementar.
+                Desde la perspectiva funcional, los lenguajes de programación pueden basarse en elementos como el ensamblador, los procedimientos y los módulos, los cuales se enfocan en la secuencia y control de las operaciones que ejecuta el programa.
+                Desde la perspectiva de datos, se utilizan mecanismos como los paquetes y los tipos abstractos de datos (TAD), que permiten organizar y proteger la información, separando su definición lógica de su implementación.
+                Finalmente, desde la perspectiva de servicio, se emplean los objetos, los cuales extienden el concepto de los TAD al incorporar características como el paso de mensajes, la herencia y el polimorfismo, facilitando el desarrollo de sistemas más flexibles, reutilizables y escalables.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P2/img/lenguaje de programacion.png" alt="estructura">
+                 </div>
+        </section>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Universidad</h4>
+                <p>FIME</p>
+            </div>
+            <div class="content-foo">
+                <h4>Semestre</h4>
+                <p>4°</p>
+            </div>
+            <div class="content-foo">
+                <h4>Materia</h4>
+                <p>Estructura de Datos</p>
+            </div>
+        </div>
+         <h2 class="titulo-final">&copy; PROYECTO FINAL 2026 </h2>
+    </footer>
+    <script src="P2/script.js"></script>
+</body>
+
+</html>

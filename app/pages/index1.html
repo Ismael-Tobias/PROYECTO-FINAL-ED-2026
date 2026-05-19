@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Página web </title>
+    <link rel="shortcut icon" href="P1/img/alexcgdesign.png" type="image/x-icon">
+    <link rel="stylesheet" href="P1/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
+</head>
+     
+<body>
+    <header>
+        <nav>
+            <a href="index1.html">ESTRUCTURA DE DATOS</a>
+            <a href="index2.html">MODULARIDAD</a>
+            <a href="index3.html">ENCAPSULACIÓN</a>
+            <a href="index4.html">ARREGLO ORDENADO</a>
+            <a href="index5.html">PILAS</a>
+            <a href="index6.html">COLAS</a>
+            <a href="index7.html">POO</a>
+            <a href="/logout" class="logout">Cerrar Sesion</a>
+        </nav>
+        <section class="textos-header">
+            <h1>ESTRUCTURA DE DATOS</h1>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+    </header>
+    <main>
+       <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">1</span>
+                <h2>¿Qúe es una estructura de datos?</h2>
+            </div>
+            <p class="descripcion">
+                Una estructura de datos es un método utilizado para organizar y almacenar información en la memoria de la computadora y, en algunos casos, en medios de almacenamiento secundario como el disco. Su propósito principal es permitir el acceso, la gestión y la manipulación eficiente de los datos dentro de un sistema informático.
+                Entre las estructuras de datos más utilizadas se encuentran los arreglos (arrays), las listas enlazadas, las pilas (stack), las colas (queue), los árboles binarios y las tablas de dispersión. Cada una de estas estructuras se emplea de acuerdo con las necesidades del programa y el tipo de operaciones que se requieran realizar, contribuyendo a un uso más eficiente de la memoria y a un mejor desempeño de los algoritmos.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                        <img src="P1/img/Estructura de Datos.png" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+> Ejemplo de Estructura de Datos
+
+import java.util.*;
+
+public class EjemploLista {
+
+    public static void main(String[] args) {
+
+        int[] lista = {10,20,30};
+
+        System.out.println(lista[1]);
+
+    }
+}
+                    </pre>
+                </div>
+            </div>
+                    
+            <div class="contenedor-boton">
+                <button class="boton" data-resultado="20">Probar Ejemplo</button>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">2</span>
+                <h2>ESTRUCTURAS DE DATOS LINEALES</h2>
+            </div>
+            <p class="descripcion">
+                 Las estructuras de datos lineales son aquellas en las que los elementos se organizan en una sola dimensión, también conocida como dimensión lineal. En este tipo de estructuras, los datos se almacenan de forma secuencial, lo que permite que cada elemento tenga un único elemento anterior y uno posterior, excepto el primero y el último.
+                 Entre los ejemplos más representativos de las estructuras de datos lineales se encuentran los arreglos (array), las listas enlazadas, las pilas (stack), que siguen el principio LIFO (último en entrar, primero en salir), y las colas (queue), que funcionan bajo el principio FIFO (primero en entrar, primero en salir). Estas estructuras son ampliamente utilizadas en programación debido a su simplicidad y eficiencia en el manejo de datos secuenciales.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P1/img/lineal.png" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+> Estructura lineal
+
+public class Lineal{
+    public static void main(String[] args){
+        String arreglo[] = {"Ismael", "Miranda", "Fatima"}
+        //Resultado
+        System.out.println(arreglo[1])
+    }
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="contenedor-boton">
+                <button class="boton" data-resultado="Miranda">Probar Ejemplo</button>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">3</span>
+                <h2>ESTRUCTURAS DE DATOS NO LINEALES</h2>
+            </div>
+            <p class="descripcion">
+                Las estructuras de datos no lineales son aquellas en las que los datos no se organizan de forma secuencial, sino que establecen relaciones más complejas entre sus elementos, como uno a muchos o muchos a muchos. En este tipo de estructuras, un elemento puede estar conectado con varios otros, lo que permite representar jerarquías y redes de información de manera más flexible.
+                Entre los principales ejemplos de estructuras de datos no lineales se encuentran las tablas, los árboles (tree), los grafos (graphs), los montículos (heaps) y los árboles prefijos (tries). Estas estructuras son ampliamente utilizadas para modelar relaciones complejas, optimizar búsquedas y gestionar grandes volúmenes de información de forma eficiente dentro de los sistemas informáticos.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P1/img/no lineal.png" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+> Estructura no lineal
+
+class Nodo{
+    int valor;
+    Nodo izquierda, derecha;
+    //Constructor
+    public Nodo(int valor){
+        this.valor = valor;
+    }
+}
+public class ArbolSimple{
+    public static void main(String[] args){
+        Nodo raiz = new Nodo(10);
+        raiz.izquierda = new Nodo(5);
+        raiz.derecha = new Nodo(20);
+        //Imprecion de Resultados
+        System.out.println("Raiz: " + raiz.valor);
+        System.out.println("Hijo izquierdo: " + raiz.izquierda.valor);
+        System.out.println("Hijo derecho: " + raiz.derecha.valor);
+    }
+}
+                </pre>
+                </div>
+            </div>
+            <div class="contenedor-boton">
+                <button class="boton" data-resultado="Raiz: 10
+Hijo izquierdo: 5
+Hijo derecho: 20">Probar Ejemplo</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Universidad</h4>
+                <p>FIME</p>
+            </div>
+            <div class="content-foo">
+                <h4>Semestre</h4>
+                <p>4°</p>
+            </div>
+            <div class="content-foo">
+                <h4>Materia</h4>
+                <p>Estructura de Datos</p>
+            </div>
+        </div>
+       <h2 class="titulo-final">&copy; PROYECTO FINAL 2026 </h2>    </footer>
+    <script src="P1/script.js"></script>
+</body>
+
+</html>

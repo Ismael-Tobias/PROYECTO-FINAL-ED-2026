@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Página web </title>
+    <link rel="shortcut icon" href="P1/img/alexcgdesign.png" type="image/x-icon">
+    <link rel="stylesheet" href="P1/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
+</head>
+     
+<body>
+    <header>
+        <nav>
+            <a href="index1.html">ESTRUCTURA DE DATOS</a>
+            <a href="index2.html">MODULARIDAD</a>
+            <a href="index3.html">ENCAPSULACIÓN</a>
+            <a href="index4.html">ARREGLO ORDENADO</a>
+            <a href="index5.html">PILAS</a>
+            <a href="index6.html">COLAS</a>
+            <a href="index7.html">POO</a>
+            <a href="/logout" class="logout">Cerrar Sesion</a>
+        </nav>
+        <section class="textos-header">
+            <h1>POO</h1>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+    </header>
+    <main>
+       <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">1</span>
+                <h2>¿QUÉ ES POO?</h2>
+            </div>
+            <p class="descripcion">
+                La Programación Orientada a Objetos (POO) es un paradigma de programación que se basa en el concepto de “objetos” como elementos fundamentales de la estructura y organización del código. Este enfoque permite a los desarrolladores crear programas utilizando bloques de construcción que representan entidades o conceptos del mundo real. Cada objeto es una instancia de una clase, la cual define tanto los datos que contiene (conocidos como atributos) como las operaciones que pueden realizarse sobre esos datos (conocidas como métodos). Además de proporcionar una estructura clara, la POO facilita la reutilización de código y el aislamiento de componentes, lo que puede mejorar significativamente la mantenibilidad y escalabilidad de las aplicaciones de software.
+           </p>
+           <div class="contenido">
+                <div class="imagen">
+                        <img src="P7/img/paradigmas.png"alt="estructura">
+                </div>
+                </div>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">2</span>
+                <h2>ABSTRACCIÓN</h2>
+            </div>
+            <p class="descripcion">
+La abstracción es el principio de la programación orientada a objetos que consiste en identificar y representar únicamente las características esenciales de un objeto, ocultando los detalles de su implementación. Su objetivo es reducir la complejidad del sistema, permitiendo que el programador se concentre en qué hace un objeto y no en cómo lo hace.            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P7/img/AbstraccionPW.png" alt="estructura">
+                </div>
+                
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+// clase abstracta 
+
+abstract class Animal {
+public abstract void hacerSonido();
+public void dormir() {
+System.out.println("El animal está durmiendo");
+}
+}
+
+// Implemeneta el uso de abstracción
+
+class Perro extends Animal {
+@Override
+public void hacerSonido() {
+        System.out.println("El perro ladra");
+    }
+}
+
+// Uso de la abstracción
+
+public class Main {
+public static void main(String[] args) {
+Animal a = new Perro(); 
+a.hacerSonido();       
+a.dormir();             
+}
+}
+                 </pre>
+                </div>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">3</span>
+                <h2>HERENCIA</h2>
+            </div>
+            <p class="descripcion">
+            La herencia es el mecanismo mediante el cual una clase puede adquirir los atributos y métodos de otra clase, estableciendo una relación jerárquica entre ellas. Este principio favorece la reutilización del código, la extensibilidad del software y la creación de estructuras más organizadas y mantenibles.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P7/img/herenciaPW.png" alt="estructura">
+                </div>
+                           <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+// Clase Padre 
+
+class Animal {
+String nombre;
+    public void comer() {
+        System.out.println("El animal está comiendo");
+    }
+}
+
+//Clase hija hereda de Padre
+
+class Perro extends Animal {
+public void ladrar() {
+System.out.println("El perro está ladrando");
+}
+}
+
+// Uso de herencia
+
+public class Main {
+public static void main(String[] args) {
+Perro p = new Perro();
+p.nombre = "Firulais"; 
+p.comer();           
+p.ladrar();           
+System.out.println(p.nombre);
+}
+}
+
+                 </pre>
+                </div>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">4</span>
+                <h2>POLIMORFISMO</h2>
+            </div>
+            <p class="descripcion">
+           El polimorfismo es la capacidad que tienen los objetos de responder de diferentes maneras a una misma operación o método, dependiendo de su tipo o clase. Permite que un mismo método tenga múltiples comportamientos, lo que mejora la flexibilidad, la escalabilidad y el desacoplamiento del código.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P7/img/Polimorfismo.png" alt="estructura">
+                </div>
+            <div class="terminal">
+            <div class="terminal-header">
+            <span class="dot rojo"></span>
+            <span class="dot amarillo"></span>
+            <span class="dot verde"></span>
+            Terminal
+        </div>
+        <pre class="terminal-texto">
+// clase Padre 
+
+class Animal {
+public void hacerSonido() {
+System.out.println("El animal hace un sonido");
+}
+}
+
+// Clase hijas
+class Perro extends Animal {
+@Override
+public void hacerSonido() {
+System.out.println("El perro ladra");
+}
+}
+
+class Gato extends Animal {
+    @Override
+    public void hacerSonido() {
+        System.out.println("El gato maúlla");
+    }
+}
+
+// Uso de el Polimorfismo
+
+public class Main {
+public static void main(String[] args) {
+Animal a1 = new Perro(); // polimorfismo
+Animal a2 = new Gato();  z
+a1.hacerSonido(); // El perro ladra
+a2.hacerSonido(); // El gato maúlla
+}
+}
+
+                 </pre>
+                </div>
+            </div>  
+        </section>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Universidad</h4>
+                <p>FIME</p>
+            </div>
+            <div class="content-foo">
+                <h4>Semestre</h4>
+                <p>4°</p>
+            </div>
+            <div class="content-foo">
+                <h4>Materia</h4>
+                <p>Estructura de Datos</p>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; PROYECTO FINAL 2026 </h2>
+    </footer>
+    <script src="P1/script.js"></script>
+</body>
+
+</html>

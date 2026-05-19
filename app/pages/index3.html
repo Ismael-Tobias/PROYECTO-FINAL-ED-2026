@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Página web AlexCG</title>
+    <link rel="shortcut icon" href="P3/img/alexcgdesign.png" type="image/x-icon">
+    <link rel="stylesheet" href="P3/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index1.html">ESTRUCTURA DE DATOS</a>
+            <a href="index2.html">MODULARIDAD</a>
+            <a href="index3.html">ENCAPSULACIÓN</a>
+            <a href="index4.html">ARREGLO ORDENADO</a>
+            <a href="index5.html">PILAS</a>
+            <a href="index6.html">COLAS</a>
+            <a href="index7.html">POO</a>
+            <a href="/logout" class="logout">Cerrar Sesion</a>
+        </nav>
+        <section class="textos-header">
+            <h1>ENCAPSULACIÓN</h1>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+    </header>
+    <main>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">1</span>
+                <h2>¿QUE ES LA ENCAPSULACIÓN?</h2>
+            </div>
+            <p class="descripcion">
+                La encapsulación en Java es un principio fundamental de la programación orientada a objetos que consiste en agrupar los datos (variables) y los métodos que operan sobre dichos datos dentro de una sola unidad denominada clase. Este mecanismo permite definir con claridad cómo se accede y se modifica la información de un objeto.
+                La encapsulación se logra declarando las variables como privadas (private) y proporcionando métodos públicos conocidos como getters y setters, a través de los cuales se controla el acceso a los datos. De esta manera, los campos de un objeto permanecen ocultos para otras clases y solo pueden ser consultados o modificados mediante operaciones bien definidas.
+                Este principio actúa como una barrera de protección, evitando accesos directos o modificaciones indebidas de la información. La encapsulación no solo busca ocultar los datos, sino también controlar su acceso y validación, lo que contribuye a la seguridad, mantenibilidad y correcta organización del código.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P3/img/encapsulamiento.png" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+>public class Alumno {
+
+    // Datos encapsulados
+    private String nombre;
+    private int edad;
+
+    public String getNombre()
+    {
+        return nombre;
+    }
+    public int getEdad() 
+    {
+        return edad;
+    }
+    public void setNombre(String nombre)
+    {
+        this.nombre = nombre;
+    }
+    public void setEdad(int edad) 
+    {
+        if (edad > 0) { // Validación
+            this.edad = edad;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Alumno alumno1 = new Alumno();
+        alumno1.setNombre("Carlos");
+        alumno1.setEdad(18);
+
+        System.out.println("Nombre: " + alumno1.getNombre());
+        System.out.println("Edad: " + alumno1.getEdad());
+    }
+    }
+                    </pre>
+                </div>
+            </div>
+            <div class="contenedor-boton">
+                <button class="boton" data-resultado="Nombre: Carlos
+Edad: 18">Probar Ejemplo</button>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">2</span>
+                <h2>¿COMO LOGRAR LA ENCAPSULACIÓN?</h2>
+            </div>
+            <p class="descripcion">
+                Para implementar la encapsulación en Java, se deben seguir los siguientes pasos:
+               1) Declarar las variables como private, con el fin de restringir el acceso directo a los atributos de la clase desde otras clases.
+               2) Proporcionar métodos públicos (public), conocidos como getters y setters, que permitan acceder y actualizar de forma controlada el valor de los atributos.
+               Mediante este procedimiento, Java garantiza que los datos de un objeto estén protegidos y solo puedan ser manipulados a través de métodos bien definidos, lo que contribuye a un diseño de software más seguro, organizado y fácil de mantener.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P3/img/lograr.png" alt="estructura">
+                </div>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">3</span>
+                <h2>TIPOS DE ENCAPSULACIÓN</h2>
+            </div>
+            <p class="descripcion">
+                La encapsulación puede aplicarse en distintos niveles, dependiendo del alcance del control de acceso que se desee establecer. A continuación, se describen los principales tipos:
+                1. Encapsulación a nivel de miembro:
+                Es la forma más básica y común de encapsulación en Java. Consiste en declarar los campos de una clase como private y permitir el acceso a ellos únicamente mediante métodos públicos, conocidos como getters y setters. Esto garantiza que los atributos no puedan ser modificados directamente desde el exterior.
+                2. Encapsulación a nivel de clase:
+                Este tipo de encapsulación se logra manteniendo las clases dentro de un paquete sin declararlas como public. De esta manera, el acceso a dichas clases queda restringido únicamente a otras clases que se encuentren dentro del mismo paquete, evitando su uso desde paquetes externos.
+                3. Encapsulación a nivel de paquete:
+                En Java, el uso de modificadores de acceso como protected o la ausencia de un modificador (acceso por defecto) permite restringir el acceso a clases o miembros para que solo puedan ser utilizados dentro del mismo paquete o por clases relacionadas. Esto contribuye a una mejor organización y protección del código.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P3/img/tipo.png" alt="estructura">
+                </div>
+        </section>
+        
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Universidad</h4>
+                <p>FIME</p>
+            </div>
+            <div class="content-foo">
+                <h4>Semestre</h4>
+                <p>4°</p>
+            </div>
+            <div class="content-foo">
+                <h4>Materia</h4>
+                <p>Estructura de Datos</p>
+            </div>
+        </div>
+         <h2 class="titulo-final">&copy; PROYECTO FINAL 2026 </h2>
+    </footer>
+    <script src="P3/script.js"></script>
+</body>
+
+</html>

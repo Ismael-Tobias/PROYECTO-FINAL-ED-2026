@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Página web </title>
+    <link rel="shortcut icon" href="P1/img/alexcgdesign.png" type="image/x-icon">
+    <link rel="stylesheet" href="P1/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
+</head>
+     
+<body>
+    <header>
+        <nav>
+            <a href="index1.html">ESTRUCTURA DE DATOS</a>
+            <a href="index2.html">MODULARIDAD</a>
+            <a href="index3.html">ENCAPSULACIÓN</a>
+            <a href="index4.html">ARREGLO ORDENADO</a>
+            <a href="index5.html">PILAS</a>
+            <a href="index6.html">COLAS</a>
+            <a href="index7.html">POO</a>
+            <a href="/logout" class="logout">Cerrar Sesion</a>
+        </nav>
+        <section class="textos-header">
+            <h1>PILAS</h1>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+    </header>
+    <main>
+       <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">1</span>
+                <h2>¿Qué es una pila?</h2>
+            </div>
+            <p class="descripcion">
+            Una pila es una estructura de datos lineal que permite almacenar y organizar información siguiendo el principio LIFO (Last In, First Out), lo que significa que el último elemento añadido es el primero en ser eliminado. Este modelo de funcionamiento garantiza un control ordenado de los datos, ya que todas las operaciones se realizan desde un único punto denominado tope.
+            Las pilas admiten operaciones básicas como la inserción de elementos (push), la eliminación del elemento superior (pop) y la consulta del valor almacenado en el tope (peek), sin modificar su contenido. Estas operaciones se caracterizan por su rapidez y simplicidad, lo que hace a las pilas eficientes en términos de tiempo de ejecución. </p>
+            <div class="contenido">
+                <div class="imagen">
+                        <img src="P5/img/Pila.png" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+> public class Pila {
+    private int[] elementos;
+    private int tope;
+    public Pila(int capacidad) {
+        elementos = new int[capacidad];
+        tope = -1;
+    }
+
+    // Insertar elemento (push)
+    public void push(int dato) {
+        if (tope == elementos.length - 1) {
+            System.out.println("La pila está llena");
+        } else {
+            elementos[++tope] = dato;
+            System.out.println("Elemento insertado: " + dato);
+        }
+    }
+
+    // Eliminar elemento (pop)
+    public int pop() {
+        if (tope == -1) {
+            System.out.println("La pila está vacía");
+            return -1;
+        } else {
+            return elementos[tope--];
+        }
+    }
+
+    // Mostrar elemento superior (peek)
+    public int peek() {
+        if (tope == -1) {
+            System.out.println("La pila está vacía");
+            return -1;
+        } else {
+            return elementos[tope];
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Pila pila = new Pila(5);
+
+        pila.push(10);
+        pila.push(20);
+        pila.push(30);
+
+        System.out.println("Elemento en la cima: " + pila.peek());
+        System.out.println("Elemento eliminado: " + pila.pop());
+        System.out.println("Nueva cima: " + pila.peek());
+    }
+}
+                    </pre>
+                </div>
+            </div>
+                    
+            <div class="contenedor-boton">
+                <button class="boton" data-resultado="Elemento insertado: 10
+Elemento insertado: 20
+Elemento insertado: 30
+Elemento en la cima: 30
+Elemento eliminado: 30
+Nueva cima: 20">Probar Ejemplo</button>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">2</span>
+                <h2>FUNCIONAMIENTO DE PILA </h2>
+            </div>
+            <p class="descripcion">
+             El funcionamiento de una pila se basa en un acceso ordenado a los datos, donde todas las operaciones se realizan desde un único punto llamado tope. Los elementos se van agregando uno sobre otro, y solo el último elemento ingresado puede ser consultado o eliminado, lo que permite mantener un control claro de la información almacenada.
+             Cuando se inserta un elemento en la pila, este pasa a ocupar el tope de la estructura. Al eliminar un elemento, se retira únicamente el que se encuentra en esa posición. También es posible consultar el valor del elemento superior sin modificar el contenido de la pila, lo cual resulta útil para conocer su estado actual.
+             Este tipo de funcionamiento hace que las pilas sean eficientes en situaciones donde se requiere seguir un orden específico, como la ejecución de procesos, el manejo de operaciones temporales y el control del flujo dentro de un programa
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P5/img/pila2.png" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+>public class Pila {
+    private int[] pila;
+    private int tope = -1;
+
+    public Pila(int tamaño) {
+        pila = new int[tamaño];
+    }
+
+    public void push(int valor) {
+        if (tope < pila.length - 1)
+            pila[++tope] = valor;
+    }
+
+    public int pop() {
+        return (tope >= 0) ? pila[tope--] : -1;
+    }
+
+    public static void main(String[] args) {
+        Pila p = new Pila(3);
+        p.push(5);
+        p.push(10);
+        p.push(15);
+
+        System.out.println(p.pop());
+        System.out.println(p.pop());
+        System.out.println(p.pop());
+    }
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="contenedor-boton">
+                <button class="boton" data-resultado="15
+10
+5">Probar Ejemplo</button>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">3</span>
+                <h2>OPERACIONES BÁSICAS DE UNA PILA</h2>
+            </div>
+            <p class="descripcion">
+            Insertar (push): agrega un elemento en el tope.
+            Eliminar (pop): retira el elemento superior.
+            Consultar el tope (peek): muestra el elemento superior sin eliminarlo.
+            Verificar si está vacía: comprueba si la pila contiene elementos.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P5/img/pila3.png" alt="estructura">
+                </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">4</span>
+                <h2>VENTAJAS</h2>
+            </div>
+            <p class="descripcion">
+            - Son fáciles de implementar.
+            - Permiten un control ordenado de los datos.
+            - Sus operaciones son rápidas y eficientes.
+            - Reducen errores al limitar el acceso a los elementos.
+            </p>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">5</span>
+                <h2>DESVENTAJAS</h2>
+            </div>
+            <p class="descripcion">
+            - No permiten acceso directo a todos los elementos.
+            - Solo se puede trabajar con el elemento del tope.
+            - En pilas estáticas, el tamaño es limitado.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Universidad</h4>
+                <p>FIME</p>
+            </div>
+            <div class="content-foo">
+                <h4>Semestre</h4>
+                <p>4°</p>
+            </div>
+            <div class="content-foo">
+                <h4>Materia</h4>
+                <p>Estructura de Datos</p>
+            </div>
+        </div>
+         <h2 class="titulo-final">&copy; PROYECTO FINAL 2026 </h2>
+    </footer>
+    <script src="P1/script.js"></script>
+</body>
+
+</html>

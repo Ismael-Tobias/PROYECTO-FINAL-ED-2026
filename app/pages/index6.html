@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Página web </title>
+    <link rel="shortcut icon" href="P1/img/alexcgdesign.png" type="image/x-icon">
+    <link rel="stylesheet" href="P1/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
+</head>
+     
+<body>
+    <header>
+        <nav>
+            <a href="index1.html">ESTRUCTURA DE DATOS</a>
+            <a href="index2.html">MODULARIDAD</a>
+            <a href="index3.html">ENCAPSULACIÓN</a>
+            <a href="index4.html">ARREGLO ORDENADO</a>
+            <a href="index5.html">PILAS</a>
+            <a href="index6.html">COLAS</a>
+            <a href="index7.html">POO</a>
+            <a href="/logout" class="logout">Cerrar Sesion</a>
+        </nav>
+        <section class="textos-header">
+            <h1>COLAS</h1>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+    </header>
+    <main>
+       <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">1</span>
+                <h2>¿QUÉ ES UNA COLA?</h2>
+            </div>
+            <p class="descripcion">
+                Una cola es una estructura de datos lineal que permite almacenar y administrar elementos siguiendo el principio FIFO (First In, First Out), lo que significa que el primer elemento que se inserta es también el primero en ser eliminado. Este comportamiento garantiza que los datos se procesen en el mismo orden en que fueron agregados.
+                En una cola, los elementos se añaden por un extremo denominado final, mientras que la eliminación se realiza por el extremo opuesto llamado frente. Esta organización evita accesos desordenados y proporciona un control eficiente del flujo de información.
+                Las colas son ampliamente utilizadas en el desarrollo de software, especialmente en situaciones donde es necesario respetar el orden de llegada de los datos, como en la gestión de tareas, el manejo de solicitudes, la administración de procesos y el funcionamiento de sistemas de espera.
+           </p>
+           <div class="contenido">
+                <div class="imagen">
+                        <img src="P6/img/Cola.png"estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+>public class Cola {
+    private int[] cola;
+    private int frente;
+    private int fin;
+    private int tamaño;
+
+    public Cola(int capacidad) {
+        cola = new int[capacidad];
+        frente = 0;
+        fin = -1;
+        tamaño = 0;
+    }
+
+    // Insertar elemento (enqueue)
+    public void encolar(int dato) {
+        if (tamaño == cola.length) {
+            System.out.println("La cola está llena");
+            return;
+        }
+        fin++;
+        cola[fin] = dato;
+        tamaño++;
+    }
+
+    // Eliminar elemento (dequeue)
+    public int desencolar() {
+        if (tamaño == 0) {
+            System.out.println("La cola está vacía");
+            return -1;
+        }
+        int dato = cola[frente];
+        frente++;
+        tamaño--;
+        return dato;
+    }
+
+    // Mostrar el primer elemento
+    public int frente() {
+        return cola[frente];
+    }
+
+    // Método principal
+    public static void main(String[] args) {
+        Cola c = new Cola(5);
+
+        c.encolar(10);
+        c.encolar(20);
+        c.encolar(30);
+
+        System.out.println("Sale: " + c.desencolar());
+        System.out.println("Sale: " + c.desencolar());
+        System.out.println("Frente actual: " + c.frente());
+    }
+}
+                    </pre>
+                </div>
+            </div>
+                    
+            <div class="contenedor-boton">
+                <button class="boton" data-resultado="Sale: 10
+Sale: 20
+Frente actual: 30">Probar Ejemplo</button>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">2</span>
+                <h2>FUNCIONAMIENTO DE COLA </h2>
+            </div>
+            <p class="descripcion">
+             El funcionamiento de una cola se basa en un acceso controlado a los datos, donde los elementos se procesan en el mismo orden en que fueron ingresados. Cuando un nuevo elemento llega, se agrega al final de la cola, y cuando se necesita retirar uno, se elimina el que se encuentra en el frente. Este mecanismo permite un flujo ordenado de información y evita que los datos se salten posiciones, lo que resulta útil en sistemas que manejan procesos de manera secuencial. La cola mantiene siempre un punto inicial y uno final, lo que facilita la gestión eficiente de los elementos durante la ejecución de un programa.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P6/img/Cola2.png" alt="estructura">
+                </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">3</span>
+                <h2>OPERACIONES BÁSICAS DE UNA COLA</h2>
+            </div>
+            <p class="descripcion">
+            - Insertar (enqueue): agrega un elemento al final de la cola.
+            - Eliminar (dequeue): retira el elemento que se encuentra al frente.
+            - Consultar frente (peek): permite visualizar el primer elemento sin eliminarlo.
+            - Verificar si está vacía: comprueba si la cola contiene elementos.
+            - Obtener tamaño: indica cuántos elementos hay almacenados.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P6/img/operaciones.png" alt="estructura">
+                </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">4</span>
+                <h2>VENTAJAS</h2>
+            </div>
+            <p class="descripcion">
+           - Mantiene el orden de llegada de los elementos, garantizando un procesamiento justo y organizado.
+           - Facilita la gestión de tareas secuenciales, como solicitudes, procesos o eventos.
+           - Permite un control eficiente del flujo de datos, evitando accesos desordenados.
+           - Es sencilla de implementar y comprender, incluso en aplicaciones complejas.
+           - Mejora la organización del código, haciendo que los programas sean más claros y mantenibles.
+            </p>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">5</span>
+                <h2>DESVENTAJAS</h2>
+            </div>
+            <p class="descripcion">
+            - El acceso a los elementos es limitado, ya que solo se puede interactuar con el frente y el final.
+            - No permite acceder directamente a un elemento específico sin eliminar los anteriores.
+            - Puede presentar desperdicio de memoria si no se implementa correctamente, especialmente en colas simples.
+            - Su uso no es adecuado cuando se requiere acceso aleatorio a los datos.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Universidad</h4>
+                <p>FIME</p>
+            </div>
+            <div class="content-foo">
+                <h4>Semestre</h4>
+                <p>4°</p>
+            </div>
+            <div class="content-foo">
+                <h4>Materia</h4>
+                <p>Estructura de Datos</p>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; PROYECTO FINAL 2026 </h2>    </footer>
+    <script src="P1/script.js"></script>
+</body>
+
+</html>

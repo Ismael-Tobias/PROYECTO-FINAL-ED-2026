@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PORYECTO FINAL</title>
+    <link rel="shortcut icon" href="P4/img/alexcgdesign.png" type="image/x-icon">
+    <link rel="stylesheet" href="P4/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/bienvenidos">BIENVENIDOS</a>
+            <a href="index1.html">ESTRUCTURA DE DATOS</a>
+            <a href="index2.html">MODULARIDAD</a>
+            <a href="index3.html">ENCAPSULACIÓN</a>
+            <a href="index4.html">ARREGLO ORDENADO</a>
+            <a href="index5.html">PILAS</a>
+            <a href="index6.html">COLAS</a>
+            <a href="index7.html">POO</a>
+            <a href="/logout" class="logout">Cerrar Sesion</a>
+        </nav>
+        <section class="textos-header">
+            <h1>ARREGLO ORDENADO</h1>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+    </header>
+    <main>
+         <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">1</span>
+                <h2>¿QUE SON LOS ARREGLOS?</h2>
+            </div>
+            <p class="descripcion">
+                Los arreglos en Java son un tipo de contendedor indexado y de tamaño fijo, donde se pueden alamacenar múltiples elementos de forma ssecuencial, siempre qie sean del mismo tipo.
+                Su representacion visual de como se alamacena los arreglos undimensionales en Java, en este ejemplo se muestra un arreglo de número eneteros.
+                Ejemplo:
+                elemntos - [7][9][4][2][80][12]
+                indices -   0  1  2  3  4   5
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P4/img/Arreglo en java.png" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+> public class EjemploArreglo {
+    public static void main(String[] args) {
+
+        int[] numeros = {10, 20, 30, 40};
+
+        System.out.println(numeros[2]);
+    }
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="contenedor-boton">
+                <button class="boton" data-resultado="30">Probar Ejemplo</button>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">2</span>
+                <h2>¿CÓMO DECLARAR UN ARREGLO EN JAVA?</h2>
+            </div>
+            <p class="descripcion">
+                Para declarar un arreglo, se tiene que indicar el tipo de dato de los elemtnos que contendra el arreglo y el nombre del arreglo.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P4/img/Arreglo 2.png" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+> Ejemplo de declaración ene int 
+   int [] numeros;
+                    </pre>
+                </div>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">3</span>
+                <h2>¿QUE SON LOS ARREGLOS ORDENADOS?</h2>
+            </div>
+            <p class="descripcion">
+                Un arreglo ordenado en Java es un tipo de arreglo (array) cuyos elementos se encuentran organizados siguiendo un orden específico, generalmente ascendente (de menor a mayor) o descendente (de mayor a menor). Este orden se mantiene de manera intencional para facilitar el manejo de la información.
+                Los arreglos ordenados se utilizan principalmente para optimizar búsquedas, realizar comparaciones eficientes y mejorar el procesamiento de datos dentro de un programa. Gracias a su estructura ordenada, permiten aplicar algoritmos como la búsqueda binaria, lo que incrementa el rendimiento y la eficiencia en el acceso a los elementos almacenados.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P4/img/arreglo.png" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+> Ejemplo de un Arreglo Ordenado
+
+import java.util.Arrays;
+public class AplicacionArregloOrdenado{
+    public static void main(String[] args){
+        int[] calificaciones = {85, 70, 95, 60, 88};
+
+        // Ordenar el arreglo
+        Arrays.sort(calificaciones);
+
+        System.out.println("Calificaciones ordenadas:");
+
+        for (int calificacion : calificaciones) 
+        {
+            System.out.println(calificacion);
+        }
+    }
+}
+                    </pre>
+                </div>
+            </div>
+             <div class="contenedor-boton">
+                <button class="boton" data-resultado="[60, 70, 85, 88, 95]">Probar Ejemplo</button>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">4</span>
+                <h2>¿COMO ORDENARLOS?</h2>
+            </div>
+            <p class="descripcion">
+                Java proporciona diversos métodos que permiten ordenar arreglos de manera sencilla y eficiente. Uno de los más utilizados es el método Arrays.sort(), el cual pertenece a la librería java.util.
+                Este método organiza automáticamente los elementos del arreglo en orden ascendente, ya sea numérico o alfabético, dependiendo del tipo de datos. Su uso simplifica el proceso de ordenamiento y mejora la legibilidad del código, evitando la implementación manual de algoritmos de ordenación.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P4/img/Arreglo ordenado.png" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+> Ejemplo de Arreglo 
+    Arrays.sort()
+                    </pre>
+                </div>
+            </div>
+        </section>
+        <section class="concepto">
+             <div class="titulo-concepto">
+                <span class="numero">5</span>
+                <h2>VENTAJAS</h2>
+            </div>
+            <p class="descripcion">
+                Los arreglos ordenados en Java ofrecen diversas ventajas dentro del desarrollo de programas, ya que permiten un manejo más eficiente y estructurado de la información. Entre sus principales beneficios se encuentran:
+               1) Permiten realizar búsquedas más rápidas, como la búsqueda binaria, lo que reduce el tiempo de ejecución del programa.
+               2) Facilitan el análisis de datos, al presentar la información de forma organizada y secuencial.
+               3) Ayudan a organizar la información de manera clara, mejorando la legibilidad y comprensión del código.
+               4) Mejoran la eficiencia de algunos algoritmos, especialmente aquellos que requieren datos ordenados para su correcto funcionamiento.
+                Estas ventajas hacen que los arreglos ordenados sean ampliamente utilizados en aplicaciones desarrolladas en Java donde el rendimiento y la organización de los datos son aspectos fundamentales.
+            </p>
+        </section>
+        <section class="concepto">
+             <div class="titulo-concepto">
+                <span class="numero">6</span>
+                <h2>¿QUÉ ES UN ARREGLO DINÁMICO EN JAVA?</h2>
+            </div>
+            <p class="descripcion">
+                Son una estructura de datos que permiten alamcenar un conjunti de elemntos de un mismo tipo de manera secuencial y ayduan en el almacenamiento y manipulación de datos, dandole mayor flexibilidad a los programadores.
+                Al crear un arreglo dinamico, se asigna una cantidad inicial de espacio en memoria para almacenar los elementos, si se agrega más elementos de los que se pueden alamcenar en ese espacio inicial, automaticamnete se asigna mas memoria para alamcenar los elementos adicionales.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P4/img/Arreglo dinamico.png" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+>import java.util.ArrayList;
+
+public class EjemploSimple {
+    public static void main(String[] args) {
+
+        ArrayList<String> nombres = new ArrayList<>();
+
+        nombres.add("Ana");
+        nombres.add("Juan");
+        nombres.add("Luis");
+
+        System.out.println(nombres);
+    }
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="contenedor-boton">
+                <button class="boton" data-resultado="[Ana, Juan, Luis]">Probar Ejemplo</button>
+            </div>
+        </section>
+        <section class="concepto">
+             <div class="titulo-concepto">
+                <span class="numero">7</span>
+                <h2>¿QUÉ ES UN ARREGLO BIDIMENSIONAL?</h2>
+            </div>
+            <p class="descripcion">
+                Un arreglo bidimensional es una estructura de datos que permite almacenar múltiples elementos organizados en renglones y columnas, formando una estructura similar a una tabla. Cada elemento dentro del arreglo se identifica mediante dos índices: uno indica la posición del renglón y el otro señala la columna en la que se encuentra, lo que facilita el acceso y la manipulación de los datos. Este tipo de arreglos es especialmente útil para representar información multidimensional, como coordenadas en un plano, textos organizados por categorías, registros estructurados o datos relacionados con problemas matemáticos y científicos. Debido a su forma de organización, los arreglos bidimensionales también son conocidos como matrices, y son ampliamente utilizados en programación para modelar situaciones del mundo real donde la información requiere más de una dimensión para ser representada correctamente.
+                DECLARACCIÓN:
+                tipo_dato [][] nombre_arreglo = new tipo_dato [numero_renglones][numero_columnas];
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P4/img/arreglo bidmensioanl.png" alt="estructura">
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+> public class MatrizTres {
+    public static void main(String[] args) {
+
+        int[][] matriz = new int[3][3];
+
+        matriz[0][0] = 1;
+        matriz[0][1] = 2;
+        matriz[0][2] = 3;
+
+        matriz[1][0] = 4;
+        matriz[1][1] = 5;
+        matriz[1][2] = 6;
+
+        matriz[2][0] = 7;
+        matriz[2][1] = 8;
+        matriz[2][2] = 9;
+
+        System.out.println(matriz[2][1]);
+    }
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="contenedor-boton">
+                <button class="boton" data-resultado="8">Probar Ejemplo</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Universidad</h4>
+                <p>FIME</p>
+            </div>
+            <div class="content-foo">
+                <h4>Semestre</h4>
+                <p>4°</p>
+            </div>
+            <div class="content-foo">
+                <h4>Materia</h4>
+                <p>Estructura de Datos</p>
+            </div>
+        </div>
+         <h2 class="titulo-final">&copy; PROYECTO FINAL 2026 </h2>
+    </footer>
+    <script src="P4/script.js"></script>
+</body>
+
+</html>
