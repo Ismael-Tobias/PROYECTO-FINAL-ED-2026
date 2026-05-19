@@ -24,7 +24,7 @@
             <a href="/logout" class="logout">Cerrar Sesion</a>
         </nav>
         <section class="textos-header">
-            <h1>POO</h1>
+            <h1>PROGRAMACION ORIENTADA A OBJETOS</h1>
         </section>
         <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
                 style="height: 100%; width: 100%;">
@@ -53,8 +53,7 @@
                 <span class="numero">2</span>
                 <h2>ABSTRACCIÓN</h2>
             </div>
-            <p class="descripcion">
-La abstracción es el principio de la programación orientada a objetos que consiste en identificar y representar únicamente las características esenciales de un objeto, ocultando los detalles de su implementación. Su objetivo es reducir la complejidad del sistema, permitiendo que el programador se concentre en qué hace un objeto y no en cómo lo hace.            </p>
+            <p class="descripcion">La abstracción es el principio de la programación orientada a objetos que consiste en identificar y representar únicamente las características esenciales de un objeto, ocultando los detalles de su implementación. Su objetivo es reducir la complejidad del sistema, permitiendo que el programador se concentre en qué hace un objeto y no en cómo lo hace.            </p>
             <div class="contenido">
                 <div class="imagen">
                     <img src="P7/img/AbstraccionPW.png" alt="estructura">
@@ -68,32 +67,31 @@ La abstracción es el principio de la programación orientada a objetos que cons
                         Terminal
                     </div>
                     <pre class="terminal-texto">
-// clase abstracta 
+>Ejemplo de Abstraccion
 
+// Clase abstracta 
 abstract class Animal {
-public abstract void hacerSonido();
-public void dormir() {
-System.out.println("El animal está durmiendo");
-}
+    public abstract void hacerSonido();
+    public void dormir() {
+        System.out.println("El animal está durmiendo");
+    }
 }
 
 // Implemeneta el uso de abstracción
-
 class Perro extends Animal {
-@Override
-public void hacerSonido() {
+    @Override
+    public void hacerSonido() {
         System.out.println("El perro ladra");
     }
 }
 
 // Uso de la abstracción
-
 public class Main {
-public static void main(String[] args) {
-Animal a = new Perro(); 
-a.hacerSonido();       
-a.dormir();             
-}
+    public static void main(String[] args) {
+        Animal a = new Perro(); 
+        a.hacerSonido();       
+        a.dormir();             
+    }
 }
                  </pre>
                 </div>
@@ -119,8 +117,9 @@ a.dormir();
                         Terminal
                     </div>
                     <pre class="terminal-texto">
-// Clase Padre 
+>Ejemplo de Herencia
 
+// Clase Padre 
 class Animal {
 String nombre;
     public void comer() {
@@ -129,25 +128,22 @@ String nombre;
 }
 
 //Clase hija hereda de Padre
-
 class Perro extends Animal {
-public void ladrar() {
-System.out.println("El perro está ladrando");
-}
+    public void ladrar() {
+        System.out.println("El perro está ladrando");
+    }
 }
 
 // Uso de herencia
-
 public class Main {
-public static void main(String[] args) {
-Perro p = new Perro();
-p.nombre = "Firulais"; 
-p.comer();           
-p.ladrar();           
-System.out.println(p.nombre);
+    public static void main(String[] args) {
+        Perro p = new Perro();
+        p.nombre = "Firulais"; 
+        p.comer();           
+        p.ladrar();           
+        System.out.println(p.nombre);
+    }
 }
-}
-
                  </pre>
                 </div>
             </div>
@@ -172,20 +168,21 @@ System.out.println(p.nombre);
             Terminal
         </div>
         <pre class="terminal-texto">
-// clase Padre 
+> Ejemplo de Polimorfismo
 
+// Clase Padre 
 class Animal {
-public void hacerSonido() {
-System.out.println("El animal hace un sonido");
-}
+    public void hacerSonido() {
+        System.out.println("El animal hace un sonido");
+    }
 }
 
 // Clase hijas
 class Perro extends Animal {
-@Override
-public void hacerSonido() {
-System.out.println("El perro ladra");
-}
+    @Override
+    public void hacerSonido() {
+        System.out.println("El perro ladra");
+    }
 }
 
 class Gato extends Animal {
@@ -198,12 +195,12 @@ class Gato extends Animal {
 // Uso de el Polimorfismo
 
 public class Main {
-public static void main(String[] args) {
-Animal a1 = new Perro(); // polimorfismo
-Animal a2 = new Gato();  z
-a1.hacerSonido(); // El perro ladra
-a2.hacerSonido(); // El gato maúlla
-}
+    public static void main(String[] args) {
+        Animal a1 = new Perro(); // polimorfismo
+        Animal a2 = new Gato();  z
+        a1.hacerSonido(); // El perro ladra
+        a2.hacerSonido(); // El gato maúlla
+    }
 }
 
                  </pre>

@@ -15,6 +15,7 @@ console.log("Servidor corriendo en el puerto", app.get("port"))
 
 //Configuración
 app.use(express.static(__direname + "/public"));
+app.use(express.static(__direname + "/pages"));
 app.use(express.json());
 app.use(cookieParser());
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Página web AlexCG</title>
+    <title>PROYECTO FINAL</title>
     <link rel="shortcut icon" href="P2/img/alexcgdesign.png" type="image/x-icon">
     <link rel="stylesheet" href="P2/estilos.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
@@ -110,30 +110,23 @@ Resultado de la suma: 12
                     <pre class="terminal-texto">
 > public class CuentaBancaria {
     private double saldo;
-    public CuentaBancaria(double saldoInicial) 
-        {
-            saldo = saldoInicial;
-        }
-    public double obtenerSaldo() 
-        {
-            return saldo;
-        }
-    public void depositar(double cantidad) 
-    {
-        if (cantidad > 0) 
-        {
+    public CuentaBancaria(double saldoInicial) {
+        saldo = saldoInicial;
+    }
+    public double obtenerSaldo() {
+        return saldo;
+    }
+    public void depositar(double cantidad) {
+        if (cantidad > 0) {
             saldo += cantidad;
         }
     }
-    public void retirar(double cantidad)
-    {
-        if (cantidad > 0 && cantidad = saldo) 
-        {
+    public void retirar(double cantidad){
+        if (cantidad > 0 && cantidad = saldo) {
             saldo -= cantidad;
         }
     }
-    public static void main(String[] args)
-    {
+    public static void main(String[] args){
         CuentaBancaria cuenta = new CuentaBancaria(1000);
         cuenta.depositar(500);
         cuenta.retirar(300);
@@ -183,7 +176,7 @@ Resultado de la suma: 12
         persona1.edad = 20;
         persona1.saludar();
     }
-    }
+}
                     </pre>
                 </div>
             </div>
@@ -197,7 +190,7 @@ Resultado de la suma: 12
                 <h2>OBJETO</h2>
             </div>
             <p class="descripcion">
-                 Un objeto es una entidad que representa una encapsulación de un estado y un comportamiento. El estado de un objeto está definido por los valores que toman sus datos o atributos, mientras que el comportamiento se expresa a través de las operaciones o métodos que puede realizar.
+                Un objeto es una entidad que representa una encapsulación de un estado y un comportamiento. El estado de un objeto está definido por los valores que toman sus datos o atributos, mientras que el comportamiento se expresa a través de las operaciones o métodos que puede realizar.
                 Los objetos se crean a partir de una clase y permiten modelar elementos del mundo real dentro de un programa. Cada objeto posee su propio estado en memoria y puede interactuar con otros objetos mediante la ejecución de sus métodos, lo que facilita la construcción de sistemas estructurados, reutilizables y fáciles de mantener.
             </p>
             <div class="contenido">
@@ -213,7 +206,9 @@ Resultado de la suma: 12
                         Terminal
                     </div>
                     <pre class="terminal-texto">
-> Persona persona1 = new Persona();
+> Ejemplo de instanciamiento de un objeto 
+
+Persona persona1 = new Persona();
                     </pre>
                 </div>
             </div>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Página web </title>
+    <title>PROYECTO FINAL</title>
     <link rel="shortcut icon" href="P1/img/alexcgdesign.png" type="image/x-icon">
     <link rel="stylesheet" href="P5/estilos.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
@@ -87,7 +87,8 @@
         if (tope == -1) {
             System.out.println("La pila está vacía");
             return -1;
-        } else {
+        } 
+        else {
             return elementos[tope];
         }
     }
@@ -150,8 +151,9 @@ Nueva cima: 20">Probar Ejemplo</button>
     }
 
     public void push(int valor) {
-        if (tope < pila.length - 1)
+        if (tope < pila.length - 1){
             pila[++tope] = valor;
+        }
     }
 
     public int pop() {
@@ -183,12 +185,10 @@ Nueva cima: 20">Probar Ejemplo</button>
                 <span class="numero">3</span>
                 <h2>OPERACIONES BÁSICAS DE UNA PILA</h2>
             </div>
-            <p class="descripcion">
-            Insertar (push): agrega un elemento en el tope.
-            Eliminar (pop): retira el elemento superior.
-            Consultar el tope (peek): muestra el elemento superior sin eliminarlo.
-            Verificar si está vacía: comprueba si la pila contiene elementos.
-            </p>
+            <p class="descripcion">Insertar (push): agrega un elemento en el tope.</p>
+            <p class="descripcion">Eliminar (pop): retira el elemento superior.</p>
+            <p class="descripcion">Consultar el tope (peek): muestra el elemento superior sin eliminarlo.</p>
+            <p class="descripcion">Verificar si está vacía: comprueba si la pila contiene elementos.</p>
             <div class="contenido">
                 <div class="imagen">
                     <img src="P5/img/pila3.png" alt="estructura">
@@ -199,23 +199,19 @@ Nueva cima: 20">Probar Ejemplo</button>
                 <span class="numero">4</span>
                 <h2>VENTAJAS</h2>
             </div>
-            <p class="descripcion">
-            - Son fáciles de implementar.
-            - Permiten un control ordenado de los datos.
-            - Sus operaciones son rápidas y eficientes.
-            - Reducen errores al limitar el acceso a los elementos.
-            </p>
+            <p class="descripcion">- Son fáciles de implementar.</p>
+            <p class="descripcion">- Permiten un control ordenado de los datos.</p>
+            <p class="descripcion">- Sus operaciones son rápidas y eficientes.</p>
+            <p class="descripcion">- Reducen errores al limitar el acceso a los elementos.</p>
         </section>
         <section class="concepto">
             <div class="titulo-concepto">
                 <span class="numero">5</span>
                 <h2>DESVENTAJAS</h2>
             </div>
-            <p class="descripcion">
-            - No permiten acceso directo a todos los elementos.
-            - Solo se puede trabajar con el elemento del tope.
-            - En pilas estáticas, el tamaño es limitado.
-            </p>
+            <p class="descripcion">- No permiten acceso directo a todos los elementos.</p>
+            <p class="descripcion">- Solo se puede trabajar con el elemento del tope.</p>
+            <p class="descripcion">- En pilas estáticas, el tamaño es limitado.</p>
         </section>
     </main>
     <footer>
