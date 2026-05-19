@@ -424,4 +424,12 @@ footer{
         font-size: 20px;
     }
 }
+.descripcion{
+    margin: 0 auto 40px auto;
+    color: #cbd5f5;
+    max-width: 900px;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 1.8;
+}
 
