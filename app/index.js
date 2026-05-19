@@ -19,7 +19,6 @@ app.use(express.json());
 app.use(cookieParser());
 
 //Rutas
-<<<<<<< HEAD
 app.get("/",authorization.soloPublico,(req,res) => res.sendFile(__direname + "/pages/login.html"));
 app.get("/bienvenido",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/pages/P0.html"));
 app.get("/index1.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/pages/index1.html"));
@@ -29,16 +28,6 @@ app.get("/index4.html",authorization.soloAdmin,(req,res) => res.sendFile(__diren
 app.get("/index5.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/pages/index5.html"));
 app.get("/index6.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/pages/index6.html"));
 app.get("/index7.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/pages/index7.html"));
-=======
-app.get("/",authorization.soloPublico,(req,res) => res.sendFile(__direname + 'Pages', 'login.html'));
-app.get("/bienvenido",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/Pages/P0.html"));
-app.get("/index1.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/Pages/index1.html"));
-app.get("/index2.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/Pages/index2.html"));
-app.get("/index3.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/Pages/index3.html"));
-app.get("/index4.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/Pages/index4.html"));
-app.get("/index5.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/Pages/index5.html"));
-app.get("/index6.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/Pages/index6.html"));
-app.get("/index7.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/Pages/index7.html"));
->>>>>>> 426e610 (Fix ruta principal)
+
 app.post("/api/login",authentication.login);
 app.get("/logout", (req,res)=>{res.clearCookie("jwt");return res.redirect("/");});
