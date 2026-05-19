@@ -55,7 +55,9 @@
                         Terminal
                     </div>
                     <pre class="terminal-texto">
->public class ModuloEjemplo {
+> Ejemplo de Modularidad
+
+public class ModuloEjemplo {
     public static void mostrarMensaje()
     {
         System.out.println("Bienvenido al sistema");
@@ -108,7 +110,9 @@ Resultado de la suma: 12
                         Terminal
                     </div>
                     <pre class="terminal-texto">
-> public class CuentaBancaria {
+> Ejemplo de Abstraccion de Datos
+
+public class CuentaBancaria {
     private double saldo;
     public CuentaBancaria(double saldoInicial) {
         saldo = saldoInicial;
@@ -146,7 +150,7 @@ Resultado de la suma: 12
                 <h2>CLASE</h2>
             </div>
             <p class="descripcion">
-                 Una clase es un modelo o plano que define los datos y comportamientos que tendrán los objetos que se crean a partir de ella. En una clase se agrupan los campos (atributos) y los métodos (funciones) relacionados, formando una sola unidad que facilita la organización y estructura del código.
+                Una clase es un modelo o plano que define los datos y comportamientos que tendrán los objetos que se crean a partir de ella. En una clase se agrupan los campos (atributos) y los métodos (funciones) relacionados, formando una sola unidad que facilita la organización y estructura del código.
                 La memoria para los miembros de una clase se asigna únicamente cuando se crea un objeto a partir de dicha clase. Esto permite un uso eficiente de los recursos del sistema y posibilita la creación de múltiples objetos independientes que comparten la misma definición, pero mantienen su propio estado en memoria.
             </p>
             <div class="contenido">
@@ -162,13 +166,16 @@ Resultado de la suma: 12
                         Terminal
                     </div>
                     <pre class="terminal-texto">
->public class Persona {
+> Ejemplo de una Clase
+
+public class Persona {
     String nombre;
     int edad;
 
     // Método 
     void saludar() {
-    System.out.println("Hola, mi nombre es " + nombre + " y tengo " + edad + " años.");
+        System.out.println("Hola, mi nombre es " + 
+        nombre + " y tengo " + edad + " años.");
     }
     public static void main(String[] args) {
         Persona persona1 = new Persona();
