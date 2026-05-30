@@ -29,6 +29,8 @@ app.get("/index4.html",authorization.soloAdmin,(req,res) => res.sendFile(__diren
 app.get("/index5.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/pages/index5.html"));
 app.get("/index6.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/pages/index6.html"));
 app.get("/index7.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/pages/index7.html"));
+app.get("/index8.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/pages/index8.html"));
+app.get("/index9.html",authorization.soloAdmin,(req,res) => res.sendFile(__direname + "/pages/index9.html"));
 
 app.post("/api/login",authentication.login);
 app.get("/logout", (req,res)=>{res.clearCookie("jwt");return res.redirect("/");});
