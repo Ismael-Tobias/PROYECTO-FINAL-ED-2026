@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PROYECTO FINAL</title>
+    <link rel="shortcut icon" href="P1/img/alexcgdesign.png" type="image/x-icon">
+    <link rel="stylesheet" href="P1/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/logout" class="logout">Cerrar Sesion</a>
+        </nav>
+        <section class="textos-header">
+            <h1>ARBOLES</h1>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+               <a href="P0.html" class="btn-menu">Menú Principal</a>
+    </header>
+    <main>
+       <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">1</span>
+                <h2>¿QUÉ ES?</h2>
+            </div>
+            <p class="descripcion">
+            Los árboles en Java son estructuras de datos jerárquicas utilizadas para organizar información de manera eficiente. A diferencia de listas o arreglos, los árboles permiten representar relaciones entre elementos mediante nodos conectados.           </p>
+           <div class="contenido">
+                <div class="imagen">
+                        <img src="P8/img/Arbol.png"alt="estructura">
+                </div>
+                </div>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">2</span>
+                <h2>Se utilizan en : </h2>
+            </div>
+            <p class="descripcion">
+                * Sistemas de archivos
+                * Bases de datos
+                * Inteligencia artificial
+                * Navegadores web (DOM)
+                * Compiladores
+                * Algoritmos de búsqueda
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P8/img/arbola1.png" alt="estructura">
+                </div>
+                </div>
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+import java.util.Scanner;
+class Nodo {
+    int dato;
+    Nodo izq, der;
+    public Nodo(int dato) {
+        this.dato = dato;
+        izq = der = null;
+    }
+}
+class Arbol {
+    Nodo raiz;
+    public Nodo insertar(Nodo raiz, int dato) {
+        if (raiz == null) {
+            return new Nodo(dato);
+        }
+        if (dato < raiz.dato) {
+            raiz.izq = insertar(raiz.izq, dato);
+        } else if (dato > raiz.dato) {
+            raiz.der = insertar(raiz.der, dato);
+        }
+        return raiz;
+    }
+    public void inorden(Nodo raiz) {
+        if (raiz != null) {
+            inorden(raiz.izq);
+            System.out.print(raiz.dato + " ");
+            inorden(raiz.der);
+        }
+    }
+    public boolean buscar(Nodo raiz, int dato) {
+        if (raiz == null) {
+            return false;
+        }
+        if (raiz.dato == dato) {
+            return true;
+        }
+        if (dato < raiz.dato) {
+            return buscar(raiz.izq, dato);
+        } else {
+            return buscar(raiz.der, dato);
+        }
+    }
+    public void mostrarBonito(Nodo raiz) {
+        if (raiz == null) {
+            System.out.println("Árbol vacío");
+            return;
+        }
+        System.out.println("\n" + raiz.dato);
+        if (raiz.izq != null || raiz.der != null) {
+            System.out.println("      /   \\");
+        }
+
+        if (raiz.izq != null) {
+            System.out.print("" + raiz.izq.dato);
+        } else {
+            System.out.print("      ");
+        }
+        if (raiz.der != null) {
+            System.out.println("" + raiz.der.dato);
+        }
+        if (raiz.izq != null &&
+            (raiz.izq.izq != null || raiz.izq.der != null ||
+             raiz.der != null && raiz.der.der != null)) {
+
+            System.out.println("    / \\      \\");
+        }
+        if (raiz.izq != null && raiz.izq.izq != null) {
+            System.out.print("   " + raiz.izq.izq.dato);
+        }
+        if (raiz.izq != null && raiz.izq.der != null) {
+            System.out.print("   " + raiz.izq.der.dato);
+        }
+        if (raiz.der != null && raiz.der.der != null) {
+            System.out.print("      " + raiz.der.der.dato);
+        }
+        System.out.println();
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        Arbol arbol = new Arbol();
+        int op, dato;
+        do {
+            System.out.println("""           
+                    ===== MENU =====
+                    1. Insertar nodo
+                    2. Mostrar árbol
+                    3. Recorrido Inorden
+                    4. Buscar número
+                    5. Salir
+                    """);
+            System.out.print("Opción: ");
+            op = leer.nextInt();
+            switch (op) {
+                case 1:
+                    System.out.print("Ingresa número: ");
+                    dato = leer.nextInt();
+                    arbol.raiz = arbol.insertar(arbol.raiz, dato);
+                    break;
+                case 2:
+                    arbol.mostrarBonito(arbol.raiz);
+                    break;
+                case 3:
+                    System.out.println("\nRecorrido Inorden:");
+                    arbol.inorden(arbol.raiz);
+                    System.out.println();
+                    break;
+                case 4:
+                    System.out.print("Número a buscar: ");
+                    dato = leer.nextInt();
+                    if (arbol.buscar(arbol.raiz, dato)) {
+                        System.out.println("Sí existe");
+                    } else {
+                        System.out.println("No existe");
+                    }
+                    break;
+                case 5:
+                    System.out.println("Programa terminado");
+                    break;
+                default:
+                    System.out.println("Opción inválida");
+            }
+        } while (op != 5);
+    }
+}                         
+                    </pre>
+                </div>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">3</span>
+                <h2>Elementos principales de un árbol:</h2>
+            </div>
+            <p class="descripcion">
+            * Nodo: elemento que almacena información.
+            * Raíz: nodo principal del árbol.
+            * Padre: nodo que tiene hijos.
+            * Hijo: nodo conectado debajo de otro.
+            * Hoja: nodo sin hijos.
+            * Arista: conexión entre nodos.           
+         </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P8/img/arbol3.png" alt="estructura">
+                </div>
+                </div>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">4</span>
+                <h2>CARACTERISTICA</h2>
+            </div>
+            <p class="descripcion">
+            * Existe un único camino desde la raíz hasta cualquier nodo.
+            * No existen ciclos.
+            * Permite representar relaciones jerárquicas.            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P8/img/arboles4.png" alt="estructura">
+            </div>  
+        </section>
+         <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">4</span>
+                <h2>Un árbol de búsqueda binario (BST)</h2>
+            </div>
+            <p class="descripcion">
+             Es un árbol binario donde cada nodo tiene un valor mayor que todos los valores en su subárbol izquierdo y menor que los de su subárbol derecho. Esta propiedad hace que los BST sean adecuados para operaciones eficientes de búsqueda, inserción y eliminación.            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P8/img/arbolbusqueda.png" alt="estructura">
+            </div>  
+                          <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+import java.util.Scanner;
+class Nodo {
+    int dato;
+    Nodo izq, der;
+    public Nodo(int dato) {
+        this.dato = dato;
+        izq = der = null;
+    }
+}
+class Arbol {
+    Nodo raiz;
+    public Nodo insertar(Nodo raiz, int dato) {
+        if (raiz == null) {
+            return new Nodo(dato);
+        }
+        if (dato < raiz.dato) {
+            raiz.izq = insertar(raiz.izq, dato);
+        } else if (dato > raiz.dato) {
+            raiz.der = insertar(raiz.der, dato);
+        }
+        return raiz;
+    }
+    public void inorden(Nodo raiz) {
+        if (raiz != null) {
+            inorden(raiz.izq);
+            System.out.print(raiz.dato + " ");
+            inorden(raiz.der);
+        }
+    }
+    public boolean buscar(Nodo raiz, int dato) {
+        if (raiz == null) {
+            return false;
+        }
+        if (raiz.dato == dato) {
+            return true;
+        }
+        if (dato < raiz.dato) {
+            return buscar(raiz.izq, dato);
+        } else {
+            return buscar(raiz.der, dato);
+        }
+    }
+    public void mostrarBonito() {
+        System.out.println("""
+        
+                  8
+                /   \\
+               3     10
+              / \\      \\
+             1   6      14
+                / \\     /
+               4   7   13
+        """);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        Arbol arbol = new Arbol();
+        int opcion;
+        int dato;
+        do {
+            System.out.println("\n===== MENU =====");
+            System.out.println("1. Insertar nodo");
+            System.out.println("2. Mostrar árbol");
+            System.out.println("3. Recorrido Inorden");
+            System.out.println("4. Buscar número");
+            System.out.println("5. Salir");
+            System.out.print("Opción: ");
+            opcion = leer.nextInt();
+            switch (opcion) {
+                case 1:
+                    System.out.print("Ingresa número: ");
+                    dato = leer.nextInt();
+                    arbol.raiz = arbol.insertar(arbol.raiz, dato);
+                    break;
+                case 2:
+                    arbol.mostrarBonito();
+                    break;
+                case 3:
+                    System.out.println("\nRECORRIDO INORDEN:");
+                    arbol.inorden(arbol.raiz);
+                    System.out.println();
+                    break;
+                case 4:
+                    System.out.print("Número a buscar: ");
+                    dato = leer.nextInt();
+                    if (arbol.buscar(arbol.raiz, dato)) {
+                        System.out.println("Sí existe");
+                    } else {
+                        System.out.println("No existe");
+                    }
+                    break;
+                case 5:
+                    System.out.println("Programa terminado");
+                    break;
+                default:
+                    System.out.println("Opción inválida");
+            }
+        } while (opcion != 5);
+    }
+}
+                </pre>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">4</span>
+                <h2>UN ARBOL AVL</h2>
+            </div>
+            <p class="descripcion">
+            Es un árbol de búsqueda binaria autoequilibrado. Mantiene el equilibrio asegurando que la diferencia de altura entre los subárboles izquierdo y derecho de cualquier nodo no sea más de uno. Esta condición de equilibrio se mantiene a través de rotaciones durante las inserciones y eliminaciones.            <div class="contenido">
+                <div class="imagen">
+                    <img src="P8/img/arbolAVL.png" alt="estructura">
+            </div>  
+        </section>
+         </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">4</span>
+                <h2>UN ARBOL BINARIO</h2>
+            </div>
+            <p class="descripcion">
+            Un árbol binario es una estructura de datos no lineal utilizada en programación y ciencias computacionales para organizar información de manera jerárquica. Está compuesto por nodos conectados entre sí mediante enlaces llamados aristas, donde cada nodo puede tener como máximo dos hijos: uno izquierdo y uno derecho.
+            A diferencia de estructuras lineales como arreglos o listas enlazadas, los árboles binarios permiten representar relaciones jerárquicas y realizar operaciones de búsqueda, inserción y eliminación de manera más eficiente.         
+                          <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+import java.util.Scanner;
+class Nodo {
+    int dato, altura;
+    Nodo izq, der;
+    public Nodo(int dato) {
+        this.dato = dato;
+        altura = 1;
+    }
+}
+class AVL {
+    Nodo raiz;
+    int altura(Nodo n) {
+        if (n == null) {
+            return 0;
+        }
+        return n.altura;
+    }
+    int balance(Nodo n) {
+
+        if (n == null) {
+            return 0;
+        }
+
+        return altura(n.izq) - altura(n.der);
+    }
+    Nodo rotarDerecha(Nodo y) {
+        Nodo x = y.izq;
+        Nodo t2 = x.der;
+        x.der = y;
+        y.izq = t2;
+        y.altura = Math.max(altura(y.izq), altura(y.der)) + 1;
+        x.altura = Math.max(altura(x.izq), altura(x.der)) + 1;
+        return x;
+    }
+    Nodo rotarIzquierda(Nodo x) {
+        Nodo y = x.der;
+        Nodo t2 = y.izq;
+        y.izq = x;
+        x.der = t2;
+        x.altura = Math.max(altura(x.izq), altura(x.der)) + 1;
+        y.altura = Math.max(altura(y.izq), altura(y.der)) + 1;
+        return y;
+    }
+    Nodo insertar(Nodo nodo, int dato) {
+        if (nodo == null) {
+            return new Nodo(dato);
+        }
+        if (dato < nodo.dato) {
+            nodo.izq = insertar(nodo.izq, dato);
+        } else if (dato > nodo.dato) {
+            nodo.der = insertar(nodo.der, dato);
+        } else {
+            return nodo;
+        }
+        nodo.altura = 1 + Math.max(altura(nodo.izq), altura(nodo.der));}
+        int balance = balance(nodo);
+        // IZQUIERDA IZQUIERDA
+        if (balance > 1 && dato < nodo.izq.dato) {
+            return rotarDerecha(nodo);
+        }
+        if (balance < -1 && dato > nodo.der.dato) {
+            return rotarIzquierda(nodo);
+        }
+        if (balance > 1 && dato > nodo.izq.dato) {
+
+            nodo.izq = rotarIzquierda(nodo.izq);
+
+            return rotarDerecha(nodo);
+        }
+        if (balance < -1 && dato < nodo.der.dato) {
+            nodo.der = rotarDerecha(nodo.der);
+            return rotarIzquierda(nodo);
+        }
+        return nodo;
+    }
+    void mostrarBonito() {
+        if (raiz == null) {
+            System.out.println("Árbol vacío");
+            return;
+        }
+        System.out.println("\n    " + raiz.dato);
+        if (raiz.izq != null || raiz.der != null) {
+            System.out.println("   /  \\");
+        }
+        if (raiz.izq != null) {
+            System.out.print(" " + raiz.izq.dato);
+        }
+        if (raiz.der != null) {
+            System.out.println("   " + raiz.der.dato);
+        }
+        System.out.println();
+    }
+public class Main {
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        AVL arbol = new AVL();
+        int op, dato;
+        do {
+            System.out.println("""
+                  
+                    ===== ÁRBOL AVL =====
+                    1. Insertar nodo
+                    2. Mostrar árbol
+                    3. Salir
+                    """);
+            System.out.print("Opción: ");
+            op = leer.nextInt();
+            switch (op) {
+                case 1:
+                    System.out.print("Ingresa número: ");
+                    dato = leer.nextInt();
+                    arbol.raiz = arbol.insertar(arbol.raiz, dato);
+                    break;
+                case 2:
+                    arbol.mostrarBonito();
+                    break;
+                case 3:
+                    System.out.println("Programa terminado");
+                    break;
+                default:
+                    System.out.println("Opción inválida");
+            }
+        } while (op != 3);
+    }
+}
+                </pre>
+        </section>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Universidad</h4>
+                <p>FIME</p>
+            </div>
+            <div class="content-foo">
+                <h4>Semestre</h4>
+                <p>4°</p>
+            </div>
+            <div class="content-foo">
+                <h4>Materia</h4>
+                <p>Estructura de Datos</p>
+            </div>
+        </div>
+        
+    </footer>
+    <script src="P1/script.js"></script>
+</body>
+</html>

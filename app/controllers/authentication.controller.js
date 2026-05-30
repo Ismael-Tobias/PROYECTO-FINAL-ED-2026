@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 //Usuarios
 export const usuarios = [{user: "Ismael_Tobias", password: "Ismael2026"}, {user: "Miranda_Aguayo", password:
-    "Miranda2026"}, {user: "Fatima_Moncada", password: "Fatima2026"}]
+    "Miranda2026"}, {user: "Fatima_Moncada", password: "Fatima2026"}, {user: "Liliana_Alonso", password: "Proyecto2026"}]
 //Funcion para hacer el login
 async function login(req,res){
     console.log(req.body);

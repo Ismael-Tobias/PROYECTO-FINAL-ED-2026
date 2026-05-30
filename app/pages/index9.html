@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PROYECTO FINAL</title>
+    <link rel="shortcut icon" href="P1/img/alexcgdesign.png" type="image/x-icon">
+    <link rel="stylesheet" href="P1/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/logout" class="logout">Cerrar Sesion</a>
+        </nav>
+        <section class="textos-header">
+            <h1>GRAFOS</h1>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+               <a href="P0.html" class="btn-menu">Menú Principal</a>
+    </header>
+    <main>
+       <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">1</span>
+                <h2>¿QUÉ ES GRAFOS</h2>
+            </div>
+            <p class="descripcion">
+            Los grafos son estructuras de datos que representan relaciones entre objetos mediante nodos (vértices) y conexiones (aristas). Son ampliamente utilizados en informática para modelar problemas complejos como redes sociales, sistemas de navegación, redes de transporte, entre otros.           </p>
+           <div class="contenido">
+                <div class="imagen">
+                        <img src="P9/img/grafos1(1).png"alt="estructura">
+                </div>
+                </div>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">2</span>
+                </h2>
+            </div>       
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot rojo"></span>
+                        <span class="dot amarillo"></span>
+                        <span class="dot verde"></span>
+                        Terminal
+                    </div>
+                    <pre class="terminal-texto">
+import java.util.Scanner;
+public class Grafo {
+   private int[][] matrizAdyacencia;
+   private int numVertices;
+   public Grafo(int numVertices) {
+       this.numVertices = numVertices;
+       this.matrizAdyacencia = new int[numVertices][numVertices];
+   }
+   public void agregarArista(int origen, int destino, int peso) {
+       matrizAdyacencia[origen][destino] = peso;
+       // Para grafos no dirigidos, descomenta la siguiente línea:
+       // matrizAdyacencia[destino][origen] = peso;
+   }
+   public void mostrarMatriz() {
+       System.out.println("Matriz de Adyacencia:");
+       for (int i = 0; i < numVertices; i++) {
+           for (int j = 0; j < numVertices; j++) {
+               System.out.print(matrizAdyacencia[i][j] + " ");
+           }
+           System.out.println();
+       }
+   }
+   public static void main(String[] args) {
+       Scanner scanner = new Scanner(System.in);
+       System.out.print("Ingrese el número de vértices: ");
+       int numVertices = scanner.nextInt();
+       Grafo grafo = new Grafo(numVertices);
+       System.out.println("Ingrese las aristas (origen, destino, peso). Ingrese -1 para terminar:");
+       while (true) {
+           int origen = scanner.nextInt();
+           if (origen == -1) break;
+           int destino = scanner.nextInt();
+           int peso = scanner.nextInt();
+           grafo.agregarArista(origen, destino, peso);
+       }
+       grafo.mostrarMatriz();
+   }
+}
+                 </pre>
+                </div>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">3</span>
+                <h2> ¿PARA QUE SIRVEN LOS GRAFOS?</h2>
+            </div>
+            <p class="descripcion">
+            Son una herramienta esencial en programación debido a su versatilidad y capacidad para modelar y resolver una amplia gama de problemas. Algunas áreas clave donde los grafos son fundamentales en programación:
+            
+            * Redes y Comunicación:
+            Los grafos se utilizan para modelar redes de computadoras, sistemas de comunicación y enrutamiento de datos. Los nodos representan dispositivos (como computadoras o routers), y las aristas representan conexiones entre ellos.
+            * Grafos Dirigidos Acíclicos (DAGs):
+            Los DAGs se utilizan en sistemas de planificación y ejecución de tareas, donde las dependencias temporales entre actividades se modelan de manera eficiente.
+            * Sistemas de Recomendación:
+            Los grafos se utilizan para modelar relaciones entre usuarios y elementos en sistemas de recomendación, como redes sociales o plataformas de comercio electrónico, para predecir preferencias y ofrecer recomendaciones personalizadas.
+            * Modelado de Relaciones:
+            Los grafos se utilizan para representar relaciones y dependencias en una amplia variedad de campos, como bases de datos, análisis de dependencias en sistemas y modelado de estructuras de datos complejas
+        
+        </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P9/img/grafos2.png" alt="estructura">
+                </div>
+                </div>
+            </div>
+        </section>
+        <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">4</span>
+                <h2>APLICACIÓN</h2>
+            </div>
+            <p class="descripcion">
+            * Redes de comunicación: Modelan redes de computadoras o Internet.
+            * Mapas y rutas: Representan conexiones entre ubicaciones.
+            * Redes sociales: Modelan relaciones entre personas.
+            * Inteligencia artificial: Representan grafos de búsqueda en IA.
+            * Sistemas de recomendaciones: Modelan preferencias de usuario y relaciones entre productos.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P9/img/grafos3.png" alt="estructura">
+                </div>
+            </div>  
+        </section>
+          <section class="concepto">
+            <div class="titulo-concepto">
+                <span class="numero">3</span>
+                <h2>TIPOS DE GRAFOS </h2>
+            </div>
+            <p class="descripcion">
+             Grafos Dirigidos:
+             En un grafo dirigido, también conocido como grafo orientado, cada arista tiene una dirección asociada. Esto significa que la relación entre dos vértices es unidireccional, y se representa mediante una flecha que indica la dirección de la conexión. La arista va desde un vértice inicial (fuente) hacia un vértice final (destino). La dirección en las aristas refleja la naturaleza de la relación entre los nodos.
+             En este ejemplo, las aristas tienen dirección. Por ejemplo, hay una arista dirigida de A a B, pero no hay una arista directa de B a A. Este grafo dirigido puede representar relaciones como dependencias temporales, flujos de información o secuencias de eventos.
+            </p>
+            <div class="contenido">
+                <div class="imagen">
+                    <img src="P9/img/grafos-dirigidos.png" alt="estructura">
+                </div>
+                </div>
+            </div>
+            <p class="descripcion">
+             Grafos No Dirigidos:
+             En un grafo no dirigido, las aristas no tienen dirección. Esto significa que la relación entre dos vértices es bidireccional y simétrica. La conexión entre dos nodos no tiene una orientación específica, y se representa mediante una línea que conecta los vértices. Cualquier vértice en un grafo no dirigido puede conectarse con cualquier otro vértice.          
+             En este ejemplo, las aristas no tienen dirección. Puedes ir de A a B o de B a A sin ninguna restricción. Este tipo de grafo se utiliza comúnmente para modelar relaciones simétricas, como conexiones en una red social, conexiones de carreteras entre ciudades o cualquier situación donde la relación entre dos nodos sea mutua
+            </p>
+            
+             <div class="contenido">
+                <div class="imagen">
+                    <img src="P9/img/grafos-no-dirigidos.png" alt="estructura">
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Universidad</h4>
+                <p>FIME</p>
+            </div>
+            <div class="content-foo">
+                <h4>Semestre</h4>
+                <p>4°</p>
+            </div>
+            <div class="content-foo">
+                <h4>Materia</h4>
+                <p>Estructura de Datos</p>
+            </div>
+        </div>
+        
+    </footer>
+    <script src="P1/script.js"></script>
+</body>
+</html>
